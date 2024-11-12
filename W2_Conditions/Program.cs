@@ -14,13 +14,13 @@ namespace W2_Conditions {
                 int salary;
                 bool salaryParsed = int.TryParse(salaryInput, out salary);
                 if (salaryParsed) {
-                    Console.Write("Enter your sex: ");
-                    string sex = Console.ReadLine();
+                    Console.Write("Enter your gender: ");
+                    string gender = Console.ReadLine();
 
-                    if (sex == "male" || sex == "female") {
-                        CheckCandidate(age, salary, sex);
+                    if (gender == "male" || gender == "female") {
+                        CheckCandidate(age, salary, gender);
                     } else {
-                        Console.WriteLine("Wrong sex!");
+                        Console.WriteLine("Wrong gender!");
                     }
                 } else {
                     Console.WriteLine("Wrong salary!");
@@ -30,9 +30,9 @@ namespace W2_Conditions {
             }
         }
 
-        static void CheckCandidate(byte age, int salary, string sex) {
+        static void CheckCandidate(byte age, int salary, string gender) {
             if (age > 18 && salary >= 1000) {
-                Console.WriteLine(sex == "female" ? "You are a suitable woman in the labor market" : "You are a suitable candidate in the labor market");
+                Console.WriteLine(gender == "female" ? "You are a suitable lady in the labor market" : "You are a suitable candidate in the labor market");
             } else if (age < 18 && salary < 1000) {
                 Console.WriteLine($"You have not yet reached working age");
             } else {
